@@ -4,7 +4,7 @@
     <head>
         <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     </head>
-    <body>
+    <body onload="statCalc()">
         <section id="stats">
             <div class="statList">
                 <h1>Level:</h1>
@@ -22,16 +22,19 @@
             </div>
         </section>
         <section id="equipment">
-            <select id="weapons">
-                <option value="0">Weapons</option>
-                <option value="1">Monado</option>
-                <option value="2">Monado II</option>
-                <option value="3">Replica Monado</option>
+            <h1>Weapon</h1>
+            <select id="weapons" onchange="weaponSwitch()">
+                <option value="none">None</option>
+                <option value="monado">Monado</option>
+                <option value="monadoII">Monado II</option>
+                <option value="replicaMonado">Replica Monado</option>
+                <option value="rudraMonado">Monado Rudra</option>
+                <option value="agniMonado">Monado Agni</option>
+                <option value="abyssMonado">Monado Abyss</option>
+                <option value="dogmaMonado">Monado Dogma</option>
+                <option value="sagaMonado">Monado Saga</option>
+                <option value="monadoIII">Monado III</option>
             </select>
-        </section>
-
-        <section id="update">
-            <button id="updateStats">Update</button>
         </section>
 
         <script src="src/index.js"></script>
