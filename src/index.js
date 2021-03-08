@@ -1,49 +1,64 @@
-let health = 5135;
-let autoMin = 0;
-let autoMax = 0;
-let strength = 405;
-let physDef = 0;
-let ether = 417;
-let etherDef = 0;
-let agility = 117;
-let crit = 5;
-let block = 0;
+const health = 5135;
+const autoMin = 0;
+const autoMax = 0;
+const strength = 405;
+const physDef = 0;
+const ether = 417;
+const etherDef = 0;
+const agility = 117;
+const crit = 5;
+const block = 0;
 
-let weapon = 'Weapon';
-let head = 'Head';
-let torso = 'Torso';
-let arms = 'Arms';
-let legs = 'Legs';
-let feet = 'Feet';
+let weaponMin = 0;
+let weaponMax = 0;
+let weaponPhysDef = 0;
+let weaponEtherDef = 0;
+let weaponCrit = 0;
+let weaponBlock = 0;
 
-document.getElementById("health").innerHTML = health;
-document.getElementById("autoMin").innerHTML = autoMin;
-document.getElementById("autoMax").innerHTML = autoMax;
-document.getElementById("strength").innerHTML = strength;
-document.getElementById("physDef").innerHTML = physDef;
-document.getElementById("ether").innerHTML = ether;
-document.getElementById("etherDef").innerHTML = etherDef;
-document.getElementById("agility").innerHTML = agility;
-document.getElementById("crit").innerHTML = crit;
-document.getElementById("block").innerHTML = block;
+let totalAutoMin = autoMin + weaponMin + strength;
+let totalAutoMax = autoMax + weaponMax + strength;
+let totalStrength = strength;
+let totalPhysDef = physDef;
+let totalEther = ether;
+let totalEtherDef = etherDef;
+let totalAgility = agility;
+let totalCrit = crit;
+let totalBlock = block;
 
-document.getElementById("weaponButton").innerHTML = weapon;
-document.getElementById("headButton").innerHTML = head;
-document.getElementById("torsoButton").innerHTML = torso;
-document.getElementById("armsButton").innerHTML = arms;
-document.getElementById("legsButton").innerHTML = legs;
-document.getElementById("feetButton").innerHTML = feet;
+document.getElementById("health").innerHTML = "HP: " + health;
+document.getElementById("autoMin").innerHTML = "Auto-Attack Min: " + totalAutoMin;
+document.getElementById("autoMax").innerHTML = "Auto-Attack Max: " + totalAutoMax;
+document.getElementById("strength").innerHTML = "Strength: " + totalStrength;
+document.getElementById("physDef").innerHTML = "Physical Def: " + totalPhysDef;
+document.getElementById("ether").innerHTML = "Ether: " + totalEther;
+document.getElementById("etherDef").innerHTML = "Ether Def: " + totalEtherDef;
+document.getElementById("agility").innerHTML = "Agility: " + totalAgility;
+document.getElementById("crit").innerHTML = "Critical Rate: " + totalCrit;
+document.getElementById("block").innerHTML = "Block Rate: " + totalBlock;
 
-let weaponButton = document.getElementById("weaponButton");
-let weaponList = document.getElementById("weaponList");
-weaponList.style.display = "none";
-weaponButton.addEventListener("click", () => {
-    if (weaponList.style.display == "none") {
-        weaponList.style.display = "block";
-      } else {
-        weaponList.style.display = "none";
-      }
-});
-weaponList.addEventListener("change", () => {
-    weapon = weaponList.value;
-});
+/* const update = document.getElementById("updateStats");
+update.addEventListener("click", () => { */
+
+let weapon = document.getElementById("weapons").value;
+
+switch (weapon)
+{
+    case "0":
+        weaponMin = 0;
+        weaponMax = 0;
+        weaponPhysDef = 0;
+        weaponEtherDef = 0;
+        weaponCrit = 0;
+        weaponBlock = 0;
+        break;
+    case "1":
+        weaponMin = 999;
+        weaponMax = 999;
+        weaponPhysDef = 0;
+        weaponEtherDef = 0;
+        weaponCrit = 10;
+        weaponBlock = 0;
+        break;
+}
+/* }); */

@@ -5,59 +5,33 @@
         <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     </head>
     <body>
-        <section id="characterSelect">
-
-        </section>
         <section id="stats">
             <div class="statList">
                 <h1>Level:</h1>
                 <h1>99</h1>
-                <h1>HP:</h1>
                 <h1 id="health"></h1>
-                <h1>Auto-Attack Min:</h1>
                 <h1 id="autoMin"></h1>
-                <h1>Auto-Attack Max:</h1>
                 <h1 id="autoMax"></h1>
-                <h1>Strength:</h1>
                 <h1 id="strength"></h1>
-                <h1>Physical Def:</h1>
                 <h1 id="physDef"></h1>
-                <h1>Ether:</h1>
                 <h1 id="ether"></h1>
-                <h1>Ether Def:</h1>
                 <h1 id="etherDef"></h1>
-                <h1>Agility:</h1>
                 <h1 id="agility"></h1>
-                <h1>Critical Rate:</h1>
                 <h1 id="crit"></h1>
-                <h1>Block Rate:</h1>
                 <h1 id="block"></h1>
             </div>
         </section>
         <section id="equipment">
-            <div id="weapons">
-                <button id="weaponButton"></button>
-                    <div id="weaponList">
-                        <a href="#monado">Monado</a>
-                        <a href="#monadoII">Monado II</a>
-                        <a href="#replicaMonado">Replica Monado</a>
-                    </div>
-            </div>
-            <div id="head">
-                <button id="headButton"></button>
-            </div>
-            <div id="torso">
-                <button id="torsoButton"></button>
-            </div>
-            <div id="arms">
-                <button id="armsButton"></button>
-            </div>
-            <div id="legs">
-                <button id="legsButton"></button>
-            </div>
-            <div id="feet">
-                <button id="feetButton"></button>
-            </div>
+            <select id="weapons">
+                <option value="0">Weapons</option>
+                <option value="1">Monado</option>
+                <option value="2">Monado II</option>
+                <option value="3">Replica Monado</option>
+            </select>
+        </section>
+
+        <section id="update">
+            <button id="updateStats">Update</button>
         </section>
 
         <script src="src/index.js"></script>
