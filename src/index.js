@@ -143,6 +143,12 @@ function headSwitch() {
             headWeight = 0;
             statCalc();
             break;
+        case 'alcolyne':
+            headPhysDef = 100;
+            headEtherDef = 94;
+            headWeight = 1;
+            statCalc();
+            break;
         case 'lancelot':
             headPhysDef = 114;
             headEtherDef = 125;
@@ -160,6 +166,12 @@ function torsoSwitch() {
             torsoPhysDef = 0;
             torsoEtherDef = 0;
             torsoWeight = 0;
+            statCalc();
+            break;
+        case 'alcolyne':
+            torsoPhysDef = 130;
+            torsoEtherDef = 180;
+            torsoWeight = 1;
             statCalc();
             break;
         case 'lancelot':
@@ -181,6 +193,12 @@ function armsSwitch() {
             armsWeight = 0;
             statCalc();
             break;
+        case 'alcolyne':
+            armsPhysDef = 70;
+            armsEtherDef = 94;
+            armsWeight = 1;
+            statCalc();
+            break;
         case 'lancelot':
             armsPhysDef = 80;
             armsEtherDef = 125;
@@ -200,6 +218,12 @@ function legsSwitch() {
             legsWeight = 0;
             statCalc();
             break;
+        case 'alcolyne':
+            legsPhysDef = 110;
+            legsEtherDef = 120;
+            legsWeight = 1;
+            statCalc();
+            break;
         case 'lancelot':
             legsPhysDef = 144;
             legsEtherDef = 126;
@@ -217,6 +241,12 @@ function feetSwitch() {
             feetPhysDef = 0;
             feetEtherDef = 0;
             feetWeight = 0;
+            statCalc();
+            break;
+        case 'alcolyne':
+            feetPhysDef = 100;
+            feetEtherDef = 92;
+            feetWeight = 1;
             statCalc();
             break;
         case 'lancelot':
