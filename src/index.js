@@ -16,6 +16,26 @@ let weaponEtherDef = 0;
 let weaponCrit = 0;
 let weaponBlock = 0;
 
+let headPhysDef = 0;
+let headEtherDef = 0;
+let headWeight = 0;
+
+let torsoPhysDef = 0;
+let torsoEtherDef = 0;
+let torsoWeight = 0;
+
+let armsPhysDef = 0;
+let armsEtherDef = 0;
+let armsWeight = 0;
+
+let legsPhysDef = 0;
+let legsEtherDef = 0;
+let legsWeight = 0;
+
+let feetPhysDef = 0;
+let feetEtherDef = 0;
+let feetWeight = 0;
+
 function weaponSwitch() {
 
     switch (document.getElementById('weapons').value)
@@ -113,15 +133,110 @@ function weaponSwitch() {
     }
 }
 
+function headSwitch() {
+
+    switch (document.getElementById('head').value)
+    {
+        case 'none':
+            headPhysDef = 0;
+            headEtherDef = 0;
+            headWeight = 0;
+            statCalc();
+            break;
+        case 'lancelot':
+            headPhysDef = 114;
+            headEtherDef = 125;
+            headWeight = 2;
+            statCalc();
+            break;
+    }
+}
+
+function torsoSwitch() {
+
+    switch (document.getElementById('torso').value)
+    {
+        case 'none':
+            torsoPhysDef = 0;
+            torsoEtherDef = 0;
+            torsoWeight = 0;
+            statCalc();
+            break;
+        case 'lancelot':
+            torsoPhysDef = 175;
+            torsoEtherDef = 194;
+            torsoWeight = 3;
+            statCalc();
+            break;
+    }
+}
+
+function armsSwitch() {
+
+    switch (document.getElementById('arms').value)
+    {
+        case 'none':
+            armsPhysDef = 0;
+            armsEtherDef = 0;
+            armsWeight = 0;
+            statCalc();
+            break;
+        case 'lancelot':
+            armsPhysDef = 80;
+            armsEtherDef = 125;
+            armsWeight = 2;
+            statCalc();
+            break;
+    }
+}
+
+function legsSwitch() {
+
+    switch (document.getElementById('legs').value)
+    {
+        case 'none':
+            legsPhysDef = 0;
+            legsEtherDef = 0;
+            legsWeight = 0;
+            statCalc();
+            break;
+        case 'lancelot':
+            legsPhysDef = 144;
+            legsEtherDef = 126;
+            legsWeight = 3;
+            statCalc();
+            break;
+    }
+}
+
+function feetSwitch() {
+
+    switch (document.getElementById('feet').value)
+    {
+        case 'none':
+            feetPhysDef = 0;
+            feetEtherDef = 0;
+            feetWeight = 0;
+            statCalc();
+            break;
+        case 'lancelot':
+            feetPhysDef = 110;
+            feetEtherDef = 125;
+            feetWeight = 2;
+            statCalc();
+            break;
+    }
+}
+
 function statCalc() {
 
 let totalAutoMin = autoMin + weaponMin + strength;
 let totalAutoMax = autoMax + weaponMax + strength;
 let totalStrength = strength;
-let totalPhysDef = physDef + weaponPhysDef;
+let totalPhysDef = physDef + weaponPhysDef + headPhysDef + torsoPhysDef + armsPhysDef + legsPhysDef + feetEtherDef;
 let totalEther = ether;
-let totalEtherDef = etherDef + weaponEtherDef;
-let totalAgility = agility;
+let totalEtherDef = etherDef + weaponEtherDef + headEtherDef + torsoEtherDef + armsEtherDef + legsEtherDef + feetEtherDef;
+let totalAgility = agility - headWeight - torsoWeight - armsWeight - legsWeight - feetWeight;
 let totalCrit = crit + weaponCrit;
 let totalBlock = block + weaponBlock;
 
