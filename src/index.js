@@ -36,7 +36,7 @@ let feetPhysDef = 0;
 let feetEtherDef = 0;
 let feetWeight = 0;
 
-function weaponSwitch() {
+weaponSwitch = () => {
 
     switch (document.getElementById('weapons').value)
     {
@@ -133,7 +133,7 @@ function weaponSwitch() {
     }
 }
 
-function headSwitch() {
+headSwitch = () => {
 
     switch (document.getElementById('head').value)
     {
@@ -158,7 +158,7 @@ function headSwitch() {
     }
 }
 
-function torsoSwitch() {
+torsoSwitch = () => {
 
     switch (document.getElementById('torso').value)
     {
@@ -183,7 +183,7 @@ function torsoSwitch() {
     }
 }
 
-function armsSwitch() {
+armsSwitch = () => {
 
     switch (document.getElementById('arms').value)
     {
@@ -208,7 +208,7 @@ function armsSwitch() {
     }
 }
 
-function legsSwitch() {
+legsSwitch = () => {
 
     switch (document.getElementById('legs').value)
     {
@@ -233,7 +233,7 @@ function legsSwitch() {
     }
 }
 
-function feetSwitch() {
+feetSwitch = () => {
 
     switch (document.getElementById('feet').value)
     {
@@ -258,27 +258,55 @@ function feetSwitch() {
     }
 }
 
-function statCalc() {
+statCalc = () => {
 
-let totalAutoMin = autoMin + weaponMin + strength;
-let totalAutoMax = autoMax + weaponMax + strength;
-let totalStrength = strength;
-let totalPhysDef = physDef + weaponPhysDef + headPhysDef + torsoPhysDef + armsPhysDef + legsPhysDef + feetEtherDef;
-let totalEther = ether;
-let totalEtherDef = etherDef + weaponEtherDef + headEtherDef + torsoEtherDef + armsEtherDef + legsEtherDef + feetEtherDef;
-let totalAgility = agility - headWeight - torsoWeight - armsWeight - legsWeight - feetWeight;
-let totalCrit = crit + weaponCrit;
-let totalBlock = block + weaponBlock;
+    let totalAutoMin = autoMin + weaponMin + strength;
+    let totalAutoMax = autoMax + weaponMax + strength;
+    let totalStrength = strength;
+    let totalPhysDef = physDef + weaponPhysDef + headPhysDef + torsoPhysDef + armsPhysDef + legsPhysDef + feetEtherDef;
+    let totalEther = ether;
+    let totalEtherDef = etherDef + weaponEtherDef + headEtherDef + torsoEtherDef + armsEtherDef + legsEtherDef + feetEtherDef;
+    let totalAgility = agility - headWeight - torsoWeight - armsWeight - legsWeight - feetWeight;
+    let totalCrit = crit + weaponCrit;
+    let totalBlock = block + weaponBlock;
 
-document.getElementById("health").innerHTML = "HP: " + health;
-document.getElementById("autoMin").innerHTML = "Auto-Attack Min: " + totalAutoMin;
-document.getElementById("autoMax").innerHTML = "Auto-Attack Max: " + totalAutoMax;
-document.getElementById("strength").innerHTML = "Strength: " + totalStrength;
-document.getElementById("physDef").innerHTML = "Physical Def: " + totalPhysDef;
-document.getElementById("ether").innerHTML = "Ether: " + totalEther;
-document.getElementById("etherDef").innerHTML = "Ether Def: " + totalEtherDef;
-document.getElementById("agility").innerHTML = "Agility: " + totalAgility;
-document.getElementById("crit").innerHTML = "Critical Rate: " + totalCrit + "%";
-document.getElementById("block").innerHTML = "Block Rate: " + totalBlock + "%";
+    document.getElementById("health").innerHTML = "HP: " + health;
+    document.getElementById("autoMin").innerHTML = "Auto-Attack Min: " + totalAutoMin;
+    document.getElementById("autoMax").innerHTML = "Auto-Attack Max: " + totalAutoMax;
+    document.getElementById("strength").innerHTML = "Strength: " + totalStrength;
+    document.getElementById("physDef").innerHTML = "Physical Def: " + totalPhysDef;
+    document.getElementById("ether").innerHTML = "Ether: " + totalEther;
+    document.getElementById("etherDef").innerHTML = "Ether Def: " + totalEtherDef;
+    document.getElementById("agility").innerHTML = "Agility: " + totalAgility;
+    document.getElementById("crit").innerHTML = "Critical Rate: " + totalCrit + "%";
+    document.getElementById("block").innerHTML = "Block Rate: " + totalBlock + "%";
 
 }
+
+window.addEventListener('load', () => {
+    statCalc();
+});
+
+weapons.addEventListener('change', () => {
+    weaponSwitch();
+});
+
+head.addEventListener('change', () => {
+    headSwitch();
+});
+
+torso.addEventListener('change', () => {
+    torsoSwitch();
+});
+
+arms.addEventListener('change', () => {
+    armsSwitch();
+});
+
+legs.addEventListener('change', () => {
+    legsSwitch();
+});
+
+feet.addEventListener('change', () => {
+    feetSwitch();
+});
