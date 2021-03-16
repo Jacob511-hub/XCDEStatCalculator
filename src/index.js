@@ -36,6 +36,51 @@ let feetPhysDef = 0;
 let feetEtherDef = 0;
 let feetWeight = 0;
 
+let headGemSlot = {
+    hp: 0,
+    strength: 0,
+    physDef: 0,
+    ether: 0,
+    etherDef: 0,
+    agility: 0
+};
+
+let torsoGemSlot = {
+    hp: 0,
+    strength: 0,
+    physDef: 0,
+    ether: 0,
+    etherDef: 0,
+    agility: 0
+};
+
+let armsGemSlot = {
+    hp: 0,
+    strength: 0,
+    physDef: 0,
+    ether: 0,
+    etherDef: 0,
+    agility: 0
+};
+
+let legsGemSlot = {
+    hp: 0,
+    strength: 0,
+    physDef: 0,
+    ether: 0,
+    etherDef: 0,
+    agility: 0
+};
+
+let feetGemSlot = {
+    hp: 0,
+    strength: 0,
+    physDef: 0,
+    ether: 0,
+    etherDef: 0,
+    agility: 0
+};
+
 weaponSwitch = () => {
 
     switch (document.getElementById('weapons').value)
@@ -158,6 +203,76 @@ headSwitch = () => {
     }
 }
 
+headGemSwitch = () => {
+
+    switch (document.getElementById('headGem').value)
+    {
+        case 'none':
+            headGemSlot.hp = 0;
+            headGemSlot.strength = 0;
+            headGemSlot.physDef = 0;
+            headGemSlot.ether = 0;
+            headGemSlot.etherDef = 0;
+            headGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'hp':
+            headGemSlot.hp = 0.5;
+            headGemSlot.strength = 0;
+            headGemSlot.physDef = 0;
+            headGemSlot.ether = 0;
+            headGemSlot.etherDef = 0;
+            headGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'strength':
+            headGemSlot.hp = 0;
+            headGemSlot.strength = 100;
+            headGemSlot.physDef = 0;
+            headGemSlot.ether = 0;
+            headGemSlot.etherDef = 0;
+            headGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'physDef':
+            headGemSlot.hp = 0;
+            headGemSlot.strength = 0;
+            headGemSlot.physDef = 100;
+            headGemSlot.ether = 0;
+            headGemSlot.etherDef = 0;
+            headGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'ether':
+            headGemSlot.hp = 0;
+            headGemSlot.strength = 0;
+            headGemSlot.physDef = 0;
+            headGemSlot.ether = 100;
+            headGemSlot.etherDef = 0;
+            headGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'etherDef':
+            headGemSlot.hp = 0;
+            headGemSlot.strength = 0;
+            headGemSlot.physDef = 0;
+            headGemSlot.ether = 0;
+            headGemSlot.etherDef = 100;
+            headGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'agility':
+            headGemSlot.hp = 0;
+            headGemSlot.strength = 0;
+            headGemSlot.physDef = 0;
+            headGemSlot.ether = 0;
+            headGemSlot.etherDef = 0;
+            headGemSlot.agility = 50;
+            statCalc();
+            break;
+    }
+}
+
 torsoSwitch = () => {
 
     switch (document.getElementById('torso').value)
@@ -178,6 +293,76 @@ torsoSwitch = () => {
             torsoPhysDef = 175;
             torsoEtherDef = 194;
             torsoWeight = 3;
+            statCalc();
+            break;
+    }
+}
+
+torsoGemSwitch = () => {
+
+    switch (document.getElementById('torsoGem').value)
+    {
+        case 'none':
+            torsoGemSlot.hp = 0;
+            torsoGemSlot.strength = 0;
+            torsoGemSlot.physDef = 0;
+            torsoGemSlot.ether = 0;
+            torsoGemSlot.etherDef = 0;
+            torsoGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'hp':
+            torsoGemSlot.hp = 0.5;
+            torsoGemSlot.strength = 0;
+            torsoGemSlot.physDef = 0;
+            torsoGemSlot.ether = 0;
+            torsoGemSlot.etherDef = 0;
+            torsoGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'strength':
+            torsoGemSlot.hp = 0;
+            torsoGemSlot.strength = 100;
+            torsoGemSlot.physDef = 0;
+            torsoGemSlot.ether = 0;
+            torsoGemSlot.etherDef = 0;
+            torsoGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'physDef':
+            torsoGemSlot.hp = 0;
+            torsoGemSlot.strength = 0;
+            torsoGemSlot.physDef = 100;
+            torsoGemSlot.ether = 0;
+            torsoGemSlot.etherDef = 0;
+            torsoGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'ether':
+            torsoGemSlot.hp = 0;
+            torsoGemSlot.strength = 0;
+            torsoGemSlot.physDef = 0;
+            torsoGemSlot.ether = 100;
+            torsoGemSlot.etherDef = 0;
+            torsoGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'etherDef':
+            torsoGemSlot.hp = 0;
+            torsoGemSlot.strength = 0;
+            torsoGemSlot.physDef = 0;
+            torsoGemSlot.ether = 0;
+            torsoGemSlot.etherDef = 100;
+            torsoGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'agility':
+            torsoGemSlot.hp = 0;
+            torsoGemSlot.strength = 0;
+            torsoGemSlot.physDef = 0;
+            torsoGemSlot.ether = 0;
+            torsoGemSlot.etherDef = 0;
+            torsoGemSlot.agility = 50;
             statCalc();
             break;
     }
@@ -208,6 +393,76 @@ armsSwitch = () => {
     }
 }
 
+armsGemSwitch = () => {
+
+    switch (document.getElementById('armsGem').value)
+    {
+        case 'none':
+            armsGemSlot.hp = 0;
+            armsGemSlot.strength = 0;
+            armsGemSlot.physDef = 0;
+            armsGemSlot.ether = 0;
+            armsGemSlot.etherDef = 0;
+            armsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'hp':
+            armsGemSlot.hp = 0.5;
+            armsGemSlot.strength = 0;
+            armsGemSlot.physDef = 0;
+            armsGemSlot.ether = 0;
+            armsGemSlot.etherDef = 0;
+            armsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'strength':
+            armsGemSlot.hp = 0;
+            armsGemSlot.strength = 100;
+            armsGemSlot.physDef = 0;
+            armsGemSlot.ether = 0;
+            armsGemSlot.etherDef = 0;
+            armsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'physDef':
+            armsGemSlot.hp = 0;
+            armsGemSlot.strength = 0;
+            armsGemSlot.physDef = 100;
+            armsGemSlot.ether = 0;
+            armsGemSlot.etherDef = 0;
+            armsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'ether':
+            armsGemSlot.hp = 0;
+            armsGemSlot.strength = 0;
+            armsGemSlot.physDef = 0;
+            armsGemSlot.ether = 100;
+            armsGemSlot.etherDef = 0;
+            armsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'etherDef':
+            armsGemSlot.hp = 0;
+            armsGemSlot.strength = 0;
+            armsGemSlot.physDef = 0;
+            armsGemSlot.ether = 0;
+            armsGemSlot.etherDef = 100;
+            armsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'agility':
+            armsGemSlot.hp = 0;
+            armsGemSlot.strength = 0;
+            armsGemSlot.physDef = 0;
+            armsGemSlot.ether = 0;
+            armsGemSlot.etherDef = 0;
+            armsGemSlot.agility = 50;
+            statCalc();
+            break;
+    }
+}
+
 legsSwitch = () => {
 
     switch (document.getElementById('legs').value)
@@ -228,6 +483,76 @@ legsSwitch = () => {
             legsPhysDef = 144;
             legsEtherDef = 126;
             legsWeight = 3;
+            statCalc();
+            break;
+    }
+}
+
+legsGemSwitch = () => {
+
+    switch (document.getElementById('legsGem').value)
+    {
+        case 'none':
+            legsGemSlot.hp = 0;
+            legsGemSlot.strength = 0;
+            legsGemSlot.physDef = 0;
+            legsGemSlot.ether = 0;
+            legsGemSlot.etherDef = 0;
+            legsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'hp':
+            legsGemSlot.hp = 0.5;
+            legsGemSlot.strength = 0;
+            legsGemSlot.physDef = 0;
+            legsGemSlot.ether = 0;
+            legsGemSlot.etherDef = 0;
+            legsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'strength':
+            legsGemSlot.hp = 0;
+            legsGemSlot.strength = 100;
+            legsGemSlot.physDef = 0;
+            legsGemSlot.ether = 0;
+            legsGemSlot.etherDef = 0;
+            legsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'physDef':
+            legsGemSlot.hp = 0;
+            legsGemSlot.strength = 0;
+            legsGemSlot.physDef = 100;
+            legsGemSlot.ether = 0;
+            legsGemSlot.etherDef = 0;
+            legsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'ether':
+            legsGemSlot.hp = 0;
+            legsGemSlot.strength = 0;
+            legsGemSlot.physDef = 0;
+            legsGemSlot.ether = 100;
+            legsGemSlot.etherDef = 0;
+            legsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'etherDef':
+            legsGemSlot.hp = 0;
+            legsGemSlot.strength = 0;
+            legsGemSlot.physDef = 0;
+            legsGemSlot.ether = 0;
+            legsGemSlot.etherDef = 100;
+            legsGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'agility':
+            legsGemSlot.hp = 0;
+            legsGemSlot.strength = 0;
+            legsGemSlot.physDef = 0;
+            legsGemSlot.ether = 0;
+            legsGemSlot.etherDef = 0;
+            legsGemSlot.agility = 50;
             statCalc();
             break;
     }
@@ -258,19 +583,112 @@ feetSwitch = () => {
     }
 }
 
+feetGemSwitch = () => {
+
+    switch (document.getElementById('feetGem').value)
+    {
+        case 'none':
+            feetGemSlot.hp = 0;
+            feetGemSlot.strength = 0;
+            feetGemSlot.physDef = 0;
+            feetGemSlot.ether = 0;
+            feetGemSlot.etherDef = 0;
+            feetGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'hp':
+            feetGemSlot.hp = 0.5;
+            feetGemSlot.strength = 0;
+            feetGemSlot.physDef = 0;
+            feetGemSlot.ether = 0;
+            feetGemSlot.etherDef = 0;
+            feetGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'strength':
+            feetGemSlot.hp = 0;
+            feetGemSlot.strength = 100;
+            feetGemSlot.physDef = 0;
+            feetGemSlot.ether = 0;
+            feetGemSlot.etherDef = 0;
+            feetGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'physDef':
+            feetGemSlot.hp = 0;
+            feetGemSlot.strength = 0;
+            feetGemSlot.physDef = 100;
+            feetGemSlot.ether = 0;
+            feetGemSlot.etherDef = 0;
+            feetGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'ether':
+            feetGemSlot.hp = 0;
+            feetGemSlot.strength = 0;
+            feetGemSlot.physDef = 0;
+            feetGemSlot.ether = 100;
+            feetGemSlot.etherDef = 0;
+            feetGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'etherDef':
+            feetGemSlot.hp = 0;
+            feetGemSlot.strength = 0;
+            feetGemSlot.physDef = 0;
+            feetGemSlot.ether = 0;
+            feetGemSlot.etherDef = 100;
+            feetGemSlot.agility = 0;
+            statCalc();
+            break;
+        case 'agility':
+            feetGemSlot.hp = 0;
+            feetGemSlot.strength = 0;
+            feetGemSlot.physDef = 0;
+            feetGemSlot.ether = 0;
+            feetGemSlot.etherDef = 0;
+            feetGemSlot.agility = 50;
+            statCalc();
+            break;
+    }
+}
+
 statCalc = () => {
 
-    let totalAutoMin = autoMin + weaponMin + strength;
-    let totalAutoMax = autoMax + weaponMax + strength;
-    let totalStrength = strength;
-    let totalPhysDef = physDef + weaponPhysDef + headPhysDef + torsoPhysDef + armsPhysDef + legsPhysDef + feetEtherDef;
-    let totalEther = ether;
-    let totalEtherDef = etherDef + weaponEtherDef + headEtherDef + torsoEtherDef + armsEtherDef + legsEtherDef + feetEtherDef;
-    let totalAgility = agility - headWeight - torsoWeight - armsWeight - legsWeight - feetWeight;
+    let gemTotal = {
+        hp: headGemSlot.hp + torsoGemSlot.hp + armsGemSlot.hp + legsGemSlot.hp + feetGemSlot.hp,
+        strength: headGemSlot.strength + torsoGemSlot.strength + armsGemSlot.strength + legsGemSlot.strength + feetGemSlot.strength,
+        physDef: headGemSlot.physDef + torsoGemSlot.physDef + armsGemSlot.physDef + legsGemSlot.physDef + feetGemSlot.physDef,
+        ether: headGemSlot.ether + torsoGemSlot.ether + armsGemSlot.ether + legsGemSlot.ether + feetGemSlot.ether,
+        etherDef: headGemSlot.etherDef + torsoGemSlot.etherDef + armsGemSlot.etherDef + legsGemSlot.etherDef + feetGemSlot.etherDef,
+        agility: headGemSlot.agility + torsoGemSlot.agility + armsGemSlot.agility + legsGemSlot.agility + feetGemSlot.agility
+    }
+    
+    if (gemTotal.hp > 0.5)
+        gemTotal.hp = 0.5;
+    if (gemTotal.strength > 150)
+        gemTotal.strength = 150;
+    if (gemTotal.physDef > 100)
+        gemTotal.physDef = 100;
+    if (gemTotal.ether > 150)
+        gemTotal.ether = 150;
+    if (gemTotal.etherDef > 100)
+        gemTotal.etherDef = 100;
+    if (gemTotal.agility > 50)
+        gemTotal.agility = 50;
+
+    let totalHP = health + health*gemTotal.hp;
+    let totalStrength = strength + gemTotal.strength;
+    let totalAutoMin = autoMin + weaponMin + totalStrength;
+    let totalAutoMax = autoMax + weaponMax + totalStrength;
+    let totalPhysDef = physDef + weaponPhysDef + headPhysDef + torsoPhysDef + armsPhysDef + legsPhysDef + feetEtherDef + gemTotal.physDef;
+    let totalEther = ether + gemTotal.ether;
+    let totalEtherDef = etherDef + weaponEtherDef + headEtherDef + torsoEtherDef + armsEtherDef + legsEtherDef + feetEtherDef + gemTotal.etherDef;
+    let totalAgility = agility + gemTotal.agility - headWeight - torsoWeight - armsWeight - legsWeight - feetWeight;
     let totalCrit = crit + weaponCrit;
     let totalBlock = block + weaponBlock;
 
-    document.getElementById("health").innerHTML = "HP: " + health;
+    document.getElementById("health").innerHTML = "HP: " + totalHP;
     document.getElementById("autoMin").innerHTML = "Auto-Attack Min: " + totalAutoMin;
     document.getElementById("autoMax").innerHTML = "Auto-Attack Max: " + totalAutoMax;
     document.getElementById("strength").innerHTML = "Strength: " + totalStrength;
@@ -295,18 +713,38 @@ head.addEventListener('change', () => {
     headSwitch();
 });
 
+headGem.addEventListener('change', () => {
+    headGemSwitch();
+});
+
 torso.addEventListener('change', () => {
     torsoSwitch();
+});
+
+torsoGem.addEventListener('change', () => {
+    torsoGemSwitch();
 });
 
 arms.addEventListener('change', () => {
     armsSwitch();
 });
 
+armsGem.addEventListener('change', () => {
+    armsGemSwitch();
+});
+
 legs.addEventListener('change', () => {
     legsSwitch();
 });
 
+legsGem.addEventListener('change', () => {
+    legsGemSwitch();
+});
+
 feet.addEventListener('change', () => {
     feetSwitch();
+});
+
+feetGem.addEventListener('change', () => {
+    feetGemSwitch();
 });
