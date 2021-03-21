@@ -699,6 +699,16 @@ statCalc = () => {
     document.getElementById("crit").innerHTML = "Critical Rate: " + totalCrit + "%";
     document.getElementById("block").innerHTML = "Block Rate: " + totalBlock + "%";
 
+    document.getElementById("backSlash").innerHTML = "Back Slash: " + totalAutoMin*4.2 + "-" + totalAutoMax*4.2;
+    document.getElementById("lightHeal").innerHTML = "Light Heal: " + totalEther*3.89 + "-" + totalEther*4.69;
+    document.getElementById("slitEdge").innerHTML = "Slit Edge: " + totalAutoMin*2.36 + "-" + totalAutoMax*2.36;
+    document.getElementById("streamEdge").innerHTML = "Stream Edge: " + totalAutoMin*3.37 + "-" + totalAutoMax*3.37;
+    document.getElementById("airSlash").innerHTML = "Air Slash: " + totalAutoMin*3.37 + "-" + totalAutoMax*3.37;
+    document.getElementById("shakerEdge").innerHTML = "Shaker Edge: " + totalAutoMin*2.74 + "-" + totalAutoMax*2.74;
+    document.getElementById("buster").innerHTML = "Monado Buster: " + totalAutoMin*7 + "-" + totalAutoMax*7;
+    document.getElementById("purge").innerHTML = "Monado Purge: " + totalAutoMin*3.53 + "-" + totalAutoMax*3.53;
+    document.getElementById("eater").innerHTML = "Monado Eater: " + totalAutoMin*3.03 + "-" + totalAutoMax*3.03;
+    document.getElementById("cyclone").innerHTML = "Monado Cyclone: " + totalAutoMin*4.08 + "-" + totalAutoMax*4.08;
 }
 
 window.addEventListener('load', () => {
