@@ -1,11 +1,11 @@
-const health = 5135;
+let health = 5135;
 const autoMin = 0;
 const autoMax = 0;
-const strength = 405;
+let strength = 405;
 const physDef = 0;
-const ether = 417;
+let ether = 417;
 const etherDef = 0;
-const agility = 117;
+let agility = 117;
 const crit = 5;
 const block = 0;
 
@@ -81,9 +81,9 @@ let feetGemSlot = {
     agility: 0
 };
 
-weaponSwitch = () => {
+shulkWeaponSwitch = () => {
 
-    switch (document.getElementById('weapons').value)
+    switch (document.getElementById('shulkWeapons').value)
     {
         case 'none':
             weaponMin = 0;
@@ -711,12 +711,34 @@ statCalc = () => {
     document.getElementById("cyclone").innerHTML = "Monado Cyclone: " + totalAutoMin*4.08 + "-" + totalAutoMax*4.08;
 }
 
-window.addEventListener('load', () => {
+shulkIcon.addEventListener('click', () => {
+    document.getElementById("shulkWeapons").style.display = "block";
+    document.getElementById("reynWeapons").style.display = "none";
+    health = 5135;
+    strength = 405;
+    ether = 417;
+    agility = 117;
     statCalc();
 });
 
-weapons.addEventListener('change', () => {
-    weaponSwitch();
+reynIcon.addEventListener('click', () => {
+    document.getElementById("shulkWeapons").style.display = "none";
+    document.getElementById("reynWeapons").style.display = "block";
+    health = 8688;
+    strength = 479;
+    ether = 269;
+    agility = 112;
+    statCalc();
+});
+
+window.addEventListener('load', () => {
+    statCalc();
+    document.getElementById("shulkWeapons").style.display = "block";
+    document.getElementById("reynWeapons").style.display = "none";
+});
+
+shulkWeapons.addEventListener('change', () => {
+    shulkWeaponSwitch();
 });
 
 head.addEventListener('change', () => {
