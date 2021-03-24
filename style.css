@@ -1,0 +1,39 @@
+body {
+    background-color: #C6C4A4;
+}
+
+.characterList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#shulkIcon {
+    height: 150px;
+    width: auto;
+    cursor: pointer;
+}
+
+#reynIcon {
+    height: 150px;
+    width: auto;
+    cursor: pointer;
+}
+
+#equipment {
+    float: left;
+}
+
+#stats {
+    display: flex;
+    flex-direction: column;
+    float: right;
+}
+
+.artLayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    padding: 10px;
+}
