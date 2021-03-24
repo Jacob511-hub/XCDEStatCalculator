@@ -178,6 +178,40 @@ shulkWeaponSwitch = () => {
     }
 }
 
+reynWeaponSwitch = () => {
+
+    switch (document.getElementById('reynWeapons').value)
+    {
+        case 'none':
+            weaponMin = 0;
+            weaponMax = 0;
+            weaponPhysDef = 0;
+            weaponEtherDef = 0;
+            weaponCrit = 0;
+            weaponBlock = 0;
+            statCalc();
+            break;
+        case 'atomicDriver':
+            weaponMin = 750;
+            weaponMax = 820;
+            weaponPhysDef = 75;
+            weaponEtherDef = 50;
+            weaponCrit = 5;
+            weaponBlock = 20;
+            statCalc();
+            break;
+        case 'scrapDriver':
+            weaponMin = 10;
+            weaponMax = 16;
+            weaponPhysDef = 5;
+            weaponEtherDef = 0;
+            weaponCrit = 0;
+            weaponBlock = 5;
+            statCalc();
+            break;
+    }
+}
+
 headSwitch = () => {
 
     switch (document.getElementById('head').value)
@@ -688,7 +722,10 @@ statCalc = () => {
     let totalCrit = crit + weaponCrit;
     let totalBlock = block + weaponBlock;
 
-    document.getElementById("health").innerHTML = "HP: " + totalHP;
+    if (totalHP > 9999)
+        totalHP = 9999;
+
+    document.getElementById("health").innerHTML = "HP: " + Math.round(totalHP);
     document.getElementById("autoMin").innerHTML = "Auto-Attack Min: " + totalAutoMin;
     document.getElementById("autoMax").innerHTML = "Auto-Attack Max: " + totalAutoMax;
     document.getElementById("strength").innerHTML = "Strength: " + totalStrength;
@@ -699,21 +736,33 @@ statCalc = () => {
     document.getElementById("crit").innerHTML = "Critical Rate: " + totalCrit + "%";
     document.getElementById("block").innerHTML = "Block Rate: " + totalBlock + "%";
 
-    document.getElementById("backSlash").innerHTML = "Back Slash: " + totalAutoMin*4.2 + "-" + totalAutoMax*4.2;
-    document.getElementById("lightHeal").innerHTML = "Light Heal: " + totalEther*3.89 + "-" + totalEther*4.69;
-    document.getElementById("slitEdge").innerHTML = "Slit Edge: " + totalAutoMin*2.36 + "-" + totalAutoMax*2.36;
-    document.getElementById("streamEdge").innerHTML = "Stream Edge: " + totalAutoMin*3.37 + "-" + totalAutoMax*3.37;
-    document.getElementById("airSlash").innerHTML = "Air Slash: " + totalAutoMin*3.37 + "-" + totalAutoMax*3.37;
-    document.getElementById("shakerEdge").innerHTML = "Shaker Edge: " + totalAutoMin*2.74 + "-" + totalAutoMax*2.74;
-    document.getElementById("buster").innerHTML = "Monado Buster: " + totalAutoMin*7 + "-" + totalAutoMax*7;
-    document.getElementById("purge").innerHTML = "Monado Purge: " + totalAutoMin*3.53 + "-" + totalAutoMax*3.53;
-    document.getElementById("eater").innerHTML = "Monado Eater: " + totalAutoMin*3.03 + "-" + totalAutoMax*3.03;
-    document.getElementById("cyclone").innerHTML = "Monado Cyclone: " + totalAutoMin*4.08 + "-" + totalAutoMax*4.08;
+    document.getElementById("backSlash").innerHTML = "Back Slash: " + Math.round(totalAutoMin*4.2) + "-" + Math.round(totalAutoMax*4.2);
+    document.getElementById("lightHeal").innerHTML = "Light Heal: " + Math.round(totalEther*3.89) + "-" + Math.round(totalEther*4.69);
+    document.getElementById("slitEdge").innerHTML = "Slit Edge: " + Math.round(totalAutoMin*2.36) + "-" + Math.round(totalAutoMax*2.36);
+    document.getElementById("streamEdge").innerHTML = "Stream Edge: " + Math.round(totalAutoMin*3.37) + "-" + Math.round(totalAutoMax*3.37);
+    document.getElementById("airSlash").innerHTML = "Air Slash: " + Math.round(totalAutoMin*3.37) + "-" + Math.round(totalAutoMax*3.37);
+    document.getElementById("shakerEdge").innerHTML = "Shaker Edge: " + Math.round(totalAutoMin*2.74) + "-" + Math.round(totalAutoMax*2.74);
+    document.getElementById("buster").innerHTML = "Monado Buster: " + Math.round(totalAutoMin*7) + "-" + Math.round(totalAutoMax*7);
+    document.getElementById("purge").innerHTML = "Monado Purge: " + Math.round((totalEther + weaponMin)*3.53) + "-" + Math.round((totalEther + weaponMax)*3.53);
+    document.getElementById("eater").innerHTML = "Monado Eater: " + Math.round((totalEther + weaponMin)*3.03) + "-" + Math.round((totalEther + weaponMax)*3.03);
+    document.getElementById("cyclone").innerHTML = "Monado Cyclone: " + Math.round((totalEther + weaponMin)*4.08) + "-" + Math.round((totalEther + weaponMax)*4.08);
+
+    document.getElementById("boneUpper").innerHTML = "Bone Upper: " + Math.round(totalAutoMin*2.26) + "-" + Math.round(totalAutoMax*2.26);
+    document.getElementById("hammerBeat").innerHTML = "Hammer Beat: " + Math.round(totalAutoMin*2.86) + "-" + Math.round(totalAutoMax*2.86);
+    document.getElementById("wildDown").innerHTML = "Wild Down: " + Math.round(totalAutoMin*2.34) + "-" + Math.round(totalAutoMax*2.34);
+    document.getElementById("auraBurst").innerHTML = "Aura Burst: " + Math.round((totalEther + weaponMin)*2.34) + "-" + Math.round((totalEther + weaponMax)*2.34);
+    document.getElementById("warSwing").innerHTML = "War Swing: " + Math.round(totalAutoMin*0.74) + "-" + Math.round(totalAutoMax*0.74);
+    document.getElementById("swordDrive").innerHTML = "Sword Drive: " + Math.round(totalAutoMin*6.37) + "-" + Math.round(totalAutoMax*6.73);
+    document.getElementById("shieldBash").innerHTML = "Shield Bash: " + Math.round(totalAutoMin*2.14) + "-" + Math.round(totalAutoMax*2.14);
+    document.getElementById("diveSobat").innerHTML = "Dive Sobat: " + Math.round(totalAutoMin*2.84) + "-" + Math.round(totalAutoMax*2.84);
+    document.getElementById("lariat").innerHTML = "Lariat: " + Math.round(totalAutoMin*3.87) + "-" + Math.round(totalAutoMax*3.87);
 }
 
 shulkIcon.addEventListener('click', () => {
     document.getElementById("shulkWeapons").style.display = "block";
     document.getElementById("reynWeapons").style.display = "none";
+    document.getElementById("shulkArtsList").style.display = "block";
+    document.getElementById("reynArtsList").style.display = "none";
     health = 5135;
     strength = 405;
     ether = 417;
@@ -724,6 +773,8 @@ shulkIcon.addEventListener('click', () => {
 reynIcon.addEventListener('click', () => {
     document.getElementById("shulkWeapons").style.display = "none";
     document.getElementById("reynWeapons").style.display = "block";
+    document.getElementById("shulkArtsList").style.display = "none";
+    document.getElementById("reynArtsList").style.display = "block";
     health = 8688;
     strength = 479;
     ether = 269;
@@ -735,10 +786,16 @@ window.addEventListener('load', () => {
     statCalc();
     document.getElementById("shulkWeapons").style.display = "block";
     document.getElementById("reynWeapons").style.display = "none";
+    document.getElementById("shulkArtsList").style.display = "block";
+    document.getElementById("reynArtsList").style.display = "none";
 });
 
 shulkWeapons.addEventListener('change', () => {
     shulkWeaponSwitch();
+});
+
+reynWeapons.addEventListener('change', () => {
+    reynWeaponSwitch();
 });
 
 head.addEventListener('change', () => {
